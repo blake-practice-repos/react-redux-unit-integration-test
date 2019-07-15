@@ -15,7 +15,8 @@
   },
   "scripts": {
     "start": "nodemon --exec babel-node server.js",
-    "build": "webpack -w"
+    "build": "webpack -w",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@babel/core": "^7.5.4",
@@ -42,6 +43,24 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.6"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|sass|scss)$": "<rootDir>public/src/__mocks__/styleMock.js"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>public/src/setupTests.js"
+    ],
+    "moduleDirectories": ["node_modules", "bower_components", "shared"],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "verbose": true
   },
   "babel": {
     "presets": [

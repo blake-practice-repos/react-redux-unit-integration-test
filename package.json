@@ -52,7 +52,11 @@
     "setupFilesAfterEnv": [
       "<rootDir>public/src/setupTests.js"
     ],
-    "moduleDirectories": ["node_modules", "bower_components", "shared"],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ],
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     },

@@ -1,5 +1,6 @@
 import { types } from './types';
 import axios from 'axios';
+import '@babel/polyfill'
 
 export const fetchPosts = () => async (dispatch) => {
   await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
